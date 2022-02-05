@@ -1,6 +1,11 @@
 <h1>Admin Dashboard</h1>
 <br/>
+
+
+
+
 <div class="panel panel-primary panel-heading">
+
   <table class="table table-bordered">
     <thead>
       <tr >
@@ -11,7 +16,7 @@
     <tbody>
       <tr>
         <td>
-          Products:
+        <%= link_to 'Products', [:admin, :products] %>
         </td>
         <td>
           <%= @count_product %>
@@ -19,7 +24,7 @@
       </tr>
       <tr>
         <td>
-          Categories:
+        <%= link_to 'Categories', [:admin, :categories] %>
         </td>
         <td>
           <%= @count_category %>

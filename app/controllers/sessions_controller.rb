@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
-  
+  before_filter :authorize, except: [:new]
+
   def new
   end
 

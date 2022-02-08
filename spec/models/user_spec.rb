@@ -63,15 +63,19 @@ RSpec.describe User, type: :model do
 
     it 'should pass with valid credentials' do
     @user = User.create(first_name: 'Bob', last_name: 'Ben', email: 'bobben@example.com', password: '12345', password_confirmation: '12345')
-    expect(User.authenticate_with_credentials('bobben@example.com', '12345')).not_to be(nil)
+    user =  User.authenticate_with_credentials('bobben@example.com', '12345') 
+    expect(user.email).to eq(@user.email)
     end
+
     it 'should pass with uppercase in email' do
       @user = User.create(first_name: 'Bob', last_name: 'Ben', email: 'bobben@example.com', password: '12345', password_confirmation: '12345')
-      expect(User.authenticate_with_credentials('BOBBEN@example.com', '12345')).not_to be(nil)
+      user =  User.authenticate_with_credentials('BOBBEN@example.com', '12345') 
+      expect(user.email).to eq(@user.email)
     end
     it 'should pass if few spaces before and/or after in email' do
       @user = User.create(first_name: 'Bob', last_name: 'Ben', email: 'bobben@example.com', password: '12345', password_confirmation: '12345')
-      expect(User.authenticate_with_credentials(" bobben@example.com ", '12345')).not_to be(nil)
+      user = User.authenticate_with_credentials(" bobben@example.com ", '12345')
+      expect(user.email).to eq(@user.email)
     end
   end
 end

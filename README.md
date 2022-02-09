@@ -35,3 +35,4 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 
+!['Front-end"](app/assets/images/photo_zero.png)

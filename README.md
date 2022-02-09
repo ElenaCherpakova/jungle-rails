@@ -38,3 +38,4 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 !["empty basket"](app/assets/images/photo_zero.png)
 !["main-page"](app/assets/images/photo_one.png)
 !["cart-with-order"](app/assets/images/photo_two.png)
+!["submitted-order"](app/assets/images/photo_three.png)

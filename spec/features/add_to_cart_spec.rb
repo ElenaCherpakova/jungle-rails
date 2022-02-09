@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to home page and clicks on link to details", type: :feature, js: true do
+RSpec.feature "Visitor navigates to home page", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -13,18 +13,17 @@ RSpec.feature "Visitor navigates to home page and clicks on link to details", ty
         price: 64.99
       )
     end
+    
 
-
-  scenario "They can navigates from the home page to the product details" do
+  scenario "They click on add button and cart updates" do
     # ACT
     visit root_path
-
-    # DEBUG
+    # DEBUG / VERIFY
     save_screenshot
+    
+    expect(page).to have_content('My Cart (0)')
+    click_button 'Add'
+    expect(page).to have_content('My Cart (1)')
 
-    # VERIFY
-    find_link("Details").trigger("click")
-    expect(page).to have_css 'section.products-show'
-    save_screenshot
   end
 end

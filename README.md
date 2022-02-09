@@ -35,4 +35,5 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 
-!['Front-end"](app/assets/images/photo_zero.png)
+!["empty basket"](app/assets/images/photo_zero.png)
+!["main-page"](app/assets/images/photo_one.png)
